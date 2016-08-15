@@ -1,0 +1,6 @@
+{
+  "name": "Ristorante-con-fusion",
+  "tagline": "It's made while learning Angular JS from Coursera",
+  "body": "# Ristorante-Con-Fusion\r\nIt's made while learning Angular JS from Coursera. Coursera is rocking. Awesome course on Angular JS\r\n\r\n# Needs to install on system(linux)\r\n* sudo npm install -g grunt-cli (root of system)\r\n* npm install grunt --save-dev\r\n* npm install grunt-contrib-jshint --save-dev\r\n* npm install jshint-stylish --save-dev\r\n* npm install time-grunt --save-dev\r\n* npm install jit-grunt --save-dev\r\n* npm install grunt-contrib-copy --save-dev\r\n* npm install grunt-contrib-clean --save-dev\r\n* npm install grunt-contrib-concat --save-dev\r\n* npm install grunt-contrib-cssmin --save-dev\r\n* npm install grunt-contrib-uglify --save-dev\r\n* npm install grunt-filerev --save-dev\r\n* npm install grunt-usemin --save-dev\r\n* npm install grunt-contrib-watch --save-dev\r\n* npm install grunt-contrib-connect --save-dev",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
