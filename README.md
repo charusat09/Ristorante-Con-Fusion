@@ -17,3 +17,4 @@ It's made while learning Angular JS from Coursera. Coursera is rocking. Awesome 
 * npm install grunt-usemin --save-dev
 * npm install grunt-contrib-watch --save-dev
 * npm install grunt-contrib-connect --save-dev
+* npm install grunt-ng-annotate --save-dev

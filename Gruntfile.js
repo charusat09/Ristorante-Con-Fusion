@@ -11,6 +11,7 @@ module.exports = function (grunt) {
   });
 
   // Define the configuration for all the tasks
+
   grunt.initConfig({
           pkg: grunt.file.readJSON('package.json'),
 
@@ -68,7 +69,23 @@ module.exports = function (grunt) {
         dest: 'dist'
       }
     },
-    
+    ngAnnotate: {
+      options: {
+        singleQuotes: true
+      },
+      app: {
+        files: [
+          {
+            expand: true,
+            cwd: '.tmp/concat/scripts',
+            src: '*.js',
+            dest: '.tmp/concat/scripts',
+            ext: '.js',
+            extDot: 'last',
+          },
+        ],
+      }
+    },
     // Concat
     concat: {
       options: {
@@ -176,11 +193,14 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concat',
     'cssmin',
+    'ngAnnotate',
     'uglify',
     'copy',
     'filerev',
     'usemin'
   ]);
+
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
   grunt.registerTask('serve',['build','connect:dist','watch']);
 
