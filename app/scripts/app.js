@@ -66,4 +66,14 @@ angular.module('confusionApp',[])
     };
 
     $scope.dishes = dishes;
+  }])
+
+  .controller('ContactController', ['$scope', function($scope) {
+
+    $scope.feedback = {mychannel:"", firstName:"", lastName:"",
+                       agree:false, email:"" };
+  }])
+
+  .controller('FeedbackController', ['$scope', function($scope) {
+
   }]);
