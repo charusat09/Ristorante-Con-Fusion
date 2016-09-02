@@ -1,11 +1,10 @@
 <div class="container">
-  <div class="row row-content" ng-controller="dishDetailController">
+  <div class="row row-content" ng-controller="DishDetailController">
     <div class="col-xs-12">
 
       <div class="media-left media-middle">
-        <a href="#">
-          <img class="media-object img-thumbnail"
-          ng-src={{dish.image}} alt="Uthappizza">
+        <a ui-sref="app.menu">
+          <img class="media-object img-thumbnail" ng-src={{dish.image}} alt="Uthappizza">
         </a>
       </div>
       <div class="media-body">
