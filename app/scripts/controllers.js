@@ -18,7 +18,21 @@ angular.module('confusionApp')
       }
     };
 
-    $scope.dishes= menuFactory.getDishes();
+    $scope.showMenu = false;
+    $scope.message = "Loading ...";
+    $scope.dishes= {};
+    menuFactory.getDishes()
+    .then(
+      function(response) {
+        $scope.dishes = response.data;
+        $scope.showMenu = true;
+      },
+      function(response) {
+        $scope.message = "Error: "+response.status + " " + response.statusText;
+      }
+    );
+
+
 
     $scope.toggleDetails = function() {
       $scope.showDetails = !$scope.showDetails;
@@ -56,6 +70,32 @@ angular.module('confusionApp')
   }])
 
   .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
-    var dish= menuFactory.getDish(parseInt($stateParams.id,10));
-    $scope.dish = dish;
-  }]);
+    $scope.dish = {};
+    $scope.showDish = false;
+    $scope.message="Loading ...";
+    menuFactory.getDish(parseInt($stateParams.id,10))
+    .then(
+      function(response){
+        $scope.dish = response.data;
+        $scope.showDish=true;
+      },
+      function(response) {
+        $scope.message = "Error: "+response.status + " " + response.statusText;
+      }
+    );
+
+
+
+  }])
+
+  .controller('IndexController', ['$scope',function($scope){
+    $scope.dish = {};
+    menuFactory.getDish(0)
+    .then(
+      function(response){
+        $scope.dish = response.data;
+        $scope.showDish = true;
+      }
+    );
+  }])
+  ;
