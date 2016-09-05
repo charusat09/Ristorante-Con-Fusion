@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     },
 
     useminPrepare: {
-      html: 'app/menu.html',
+      html: './app/**/*.html',
       options: {
         dest: 'dist'
       }
@@ -174,7 +174,7 @@ module.exports = function (grunt) {
           base:{
                path: 'dist',
             options: {
-                index: 'menu.html',
+                index: 'index.html',
                 maxAge: 300000
             }
           }
